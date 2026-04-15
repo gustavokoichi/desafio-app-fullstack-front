@@ -38,9 +38,9 @@ async function loadEntries() {
 
   entriesList.innerHTML = entries.map(entry => `
     <div class="entry-item">
-      <h3>${entry.title}</h3>
-      <p>${formatDate(entry.happenedAt)}</p>
-      <p>${entry.description}</p>
+      <h3>${entry.raca}</h3>
+      <p>${formatDate(entry.tamanho)}</p>
+      <p>${entry.cor}</p>
       <div class="entry-buttons">
         <button onclick="editEntry('${entry._id}')">Editar</button>
         <button onclick="deleteEntry('${entry._id}')">Excluir</button>
@@ -66,9 +66,9 @@ window.editEntry = async function (id) {
   const entry = await response.json();
 
   entryId.value = entry._id;
-  title.value = entry.title;
-  description.value = entry.description;
-  happenedAt.value = new Date(entry.happenedAt).toISOString().slice(0, 16);
+  raca.value = entry.raca;
+  tamanho.value = entry.tamanho;
+  cor.value = entry.cor
 
   formTitle.textContent = 'Editar registro';
   cancelEdit.classList.remove('hidden');

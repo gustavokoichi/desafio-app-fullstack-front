@@ -87,9 +87,9 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const data = {
-    title: title.value,
-    description: description.value,
-    happenedAt: happenedAt.value
+    raca: raca.value,
+    tamanh: tamanho.value,
+    cor: cor.value
   };
 
   await saveEntry(data);

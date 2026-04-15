@@ -2,9 +2,9 @@ const API_URL = 'https://desafio-app-fullstack-back-1.onrender.com';
 
 const form = document.getElementById('entry-form');
 const entryId = document.getElementById('entry-id');
-const title = document.getElementById('title');
-const description = document.getElementById('description');
-const happenedAt = document.getElementById('happenedAt');
+const title = document.getElementById('raca');
+const description = document.getElementById('tamanho');
+const happenedAt = document.getElementById('cor');
 const entriesList = document.getElementById('entries-list');
 const message = document.getElementById('message');
 const cancelEdit = document.getElementById('cancel-edit');

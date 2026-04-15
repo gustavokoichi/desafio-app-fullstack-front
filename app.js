@@ -20,7 +20,6 @@ function clearForm() {
   entryId.value = '';
   formTitle.textContent = 'Novo registro';
   cancelEdit.classList.add('hidden');
-  happenedAt.value = new Date().toISOString().slice(0, 16);
 }
 
 function formatDate(date) {

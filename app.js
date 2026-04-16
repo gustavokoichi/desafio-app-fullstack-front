@@ -34,15 +34,19 @@ async function loadEntries() {
     entriesList.innerHTML = '<p>Nenhum registro encontrado.</p>';
     return;
   }
-
+  
   entriesList.innerHTML = entries.map(entry => `
     <div class="entry-item">
-      <h3>${entry.raca}</h3>
-      <p>${entry.tamanho}</p>
-      <p>${entry.cor}</p>
+      <div class="entry-info">
+        <span class="entry-raca">${entry.raca}</span>
+        <div class="entry-details">
+          <span class="entry-tag">📏 ${entry.tamanho}</span>
+          <span class="entry-tag">🎨 ${entry.cor}</span>
+        </div>
+      </div>
       <div class="entry-buttons">
-        <button onclick="editEntry('${entry._id}')">Editar</button>
-        <button onclick="deleteEntry('${entry._id}')">Excluir</button>
+        <button class="btn-edit" onclick="editEntry('${entry._id}')">Editar</button>
+        <button class="btn-delete" onclick="deleteEntry('${entry._id}')">Excluir</button>
       </div>
     </div>
   `).join('');

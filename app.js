@@ -1,4 +1,4 @@
-const API_URL = 'https://desafio-app-fullstack-back-1.onrender.com';
+const API_URL = 'https://desafio-app-fullstack-back-1.onrender.com/api/entries';
 
 const form = document.getElementById('entry-form');
 const entryId = document.getElementById('entry-id');
@@ -38,7 +38,7 @@ async function loadEntries() {
   entriesList.innerHTML = entries.map(entry => `
     <div class="entry-item">
       <h3>${entry.raca}</h3>
-      <p>${formatDate(entry.tamanho)}</p>
+      <p>${entry.tamanho}</p>
       <p>${entry.cor}</p>
       <div class="entry-buttons">
         <button onclick="editEntry('${entry._id}')">Editar</button>
@@ -87,7 +87,7 @@ form.addEventListener('submit', async (e) => {
 
   const data = {
     raca: raca.value,
-    tamanh: tamanho.value,
+    tamanho: tamanho.value,
     cor: cor.value
   };
 

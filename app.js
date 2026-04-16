@@ -31,7 +31,12 @@ async function loadEntries() {
   const entries = await response.json();
 
   if (!entries.length) {
-    entriesList.innerHTML = '<p>Nenhum registro encontrado.</p>';
+    entriesList.innerHTML = `
+      <div class="empty-state">
+        <span class="empty-icon">🐕</span>
+        <p>Nenhum registro encontrado.</p>
+      </div>
+    `;
     return;
   }
   
